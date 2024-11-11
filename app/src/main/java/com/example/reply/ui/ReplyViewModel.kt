@@ -33,8 +33,7 @@ class ReplyViewModel : ViewModel() {
     }
 
     private fun initializeUIState() {
-        val mailboxes: Map<MailboxType, List<Email>> =
-            LocalEmailsDataProvider.allEmails.groupBy { it.mailbox }
+        val mailboxes: Map<MailboxType, List<Email>> = LocalEmailsDataProvider.allEmails.groupBy { it.mailbox }
         _uiState.value =
             ReplyUiState(
                 mailboxes = mailboxes,
